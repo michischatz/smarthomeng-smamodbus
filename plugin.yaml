@@ -1,0 +1,77 @@
+# Metadata for the plugin
+plugin:
+    # Global plugin attributes
+    type: interface                   # plugin type (gateway, interface, protocol, system, web)
+    description:
+        de: 'Plugin zum lesen der Modbus Schnittstelle von SMA Geräten'
+        en: 'Plugin to read the Modbus interface of SMA devices'
+    maintainer: Michael Schatz
+    tester: Michael Schatz
+    state: develop                  # change to ready when done with development
+    keywords: sma modbus
+    #documentation: https://github.com/smarthomeNG/smarthome/wiki/CLI-Plugin        # url of documentation (wiki) page
+    documentation: https://www.smarthomeng.de/user/plugins/smamodbus/user_doc.html        # url of documentation (wiki) page
+    support: https://knx-user-forum.de/forum/supportforen/smarthome-py
+
+    version: 1.0.0                  # Plugin version (must match the version specified in __init__.py)
+    sh_minversion: 1.7              # minimum shNG version to use this plugin
+#    sh_maxversion:                 # maximum shNG version to use this plugin (leave empty if latest)
+#    py_minversion: 3.6             # minimum Python version to use for this plugin
+#    py_maxversion:                 # maximum Python version to use for this plugin (leave empty if latest)
+    multi_instance: True           # plugin supports multi instance
+    restartable: unknown
+    classname: SMAModbus         # class containing the plugin
+
+parameters:
+    host:
+        type: str
+        default: 'pv.haus'
+        mandatory: True
+        description:
+            de: 'IP-Adresse des Wechselrichter'
+            en: 'IP address of the inverter'
+
+    port:
+        type: int
+        default: '502'
+        mandatory: True
+        description:
+            de: 'Modbus Port des Wechselrichter'
+            en: 'Modbus port of the inverter'
+            
+    unitid:
+        type: int
+        default: '3'
+        #mandatory: True
+        description:
+            de: 'Unit ID des Wechselrichter'
+            en: 'Unit ID of the inverter'
+
+    cycle:
+        type: int
+        default: 60
+        mandatory: True
+        description:
+            de: 'Zykluszeit (in Sekunden)'
+            en: 'Cycle time (in seconds)'
+
+item_attributes:
+    # Definition of item attributes defined by this plugin (enter 'item_attributes: NONE', if section should be empty)
+    smamodbus:
+        type: str
+        description:
+            de: 'Gibt die Details der Registeradresse nach Dokumentation SMA an. Bitte folgendes Format verwenden: <Registeradresse SMA>-<Anzahl zusammenhängerder SMA Register>-<Datentyp SMA> Beispiel Status: 30201-2-U32'
+            en: 'Specifies a register address.'
+
+item_structs:
+    # Definition of item-structure templates for this plugin (enter 'item_structs: NONE', if section should be empty)
+
+#item_attribute_prefixes:
+    # Definition of item attributes that only have a common prefix (enter 'item_attribute_prefixes: NONE' or ommit this section, if section should be empty)
+    # NOTE: This section should only be used, if really nessesary (e.g. for the stateengine plugin)
+
+plugin_functions:
+    # Definition of plugin functions defined by this plugin (enter 'plugin_functions: NONE', if section should be empty)
+
+logic_parameters:
+    # Definition of logic parameters defined by this plugin (enter 'logic_parameters: NONE', if section should be empty)
