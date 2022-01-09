@@ -26,7 +26,7 @@ After the configuration is done, the plugin must be activated, than it should wo
 Items need a new attribute to receive the data.
 If you use this plugin for more than one inverter, you need to work with the @.
 
-smamodbus@<inverter-instance-name>: <Register adresse SMA>-<Number of contguous SMA register>-<Data type SMA>
+```smamodbus@<inverter-instance-name>: <Register adresse SMA>-<Number of contguous SMA register>-<Data type SMA>```
   
 
 ```yaml
