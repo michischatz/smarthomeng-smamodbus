@@ -33,7 +33,7 @@ DE:
 
 ```smamodbus@<inverter-instance-name>: <Registeradresse SMA>-<Anzahl zusammenhängender SMA register>-<Datentyp SMA>```
 
-### Example
+### Example 1
 
 You can read the serial number from the inverter.
 The instance name of the plugin in this example is "pv" and the used specification is for a SUNNY TRIPOWER 8.0 "MODBUS-HTML_STP8.0-10.0-3AV-40_GG10_V10" (Firmware version 1.1.18.R), see the folder "specs" for further information.
@@ -46,6 +46,8 @@ PV:
             type: num
             smamodbus@pv: 30005-2-U32
 ```
+
+### Example 2
 
 This example will receive the battery charge level of the SUNNY ISLAND 4.4M-13 inverter, see the specs MODBUS-HTML_SI44M-80H-13_32009R_V10.
 The instance name here is battery.
