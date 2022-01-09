@@ -50,7 +50,7 @@ Bitte die Dokumentation lesen, die aus den Metadaten der plugin.yaml erzeugt wur
 Beispiele
 ---------
 
-Das folgenden Beispiel zeigt, wie ein PV- und Batteriewchselrichter zusammen gelesen werden können.
+Das folgenden Beispiel zeigt, wie ein PV- und Batteriewechselrichter zusammen gelesen werden können.
 Je Wechselrichter muss eine Instanz konfiguriert werden. Die Angabe nach dem @ ist der Instanzname.
 
 .. code:: yaml
