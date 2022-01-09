@@ -6,7 +6,7 @@ It is a multi instance plugin and can be used for on or more inverters.
 Download the latest release and place it in your plugin folder of the SmartHomeNG installation. Restart SmartHomeNG service.
 Follow up the next step.
 
-## Requierments
+## Requirements
 - pymodbus >= 2.3.0
 - modbus interface must be enabled on the inverter (privileged access is requiered)
 - modbus unit id on the inverter must be set
