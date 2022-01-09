@@ -7,11 +7,11 @@ plugin:
         en: 'Plugin to read the Modbus interface of SMA devices'
     maintainer: Michael Schatz
     tester: Michael Schatz
-    state: develop                  # change to ready when done with development
+    state: ready                  # change to ready when done with development
     keywords: sma modbus
     #documentation: https://github.com/smarthomeNG/smarthome/wiki/CLI-Plugin        # url of documentation (wiki) page
-    documentation: https://www.smarthomeng.de/user/plugins/smamodbus/user_doc.html        # url of documentation (wiki) page
-    support: https://knx-user-forum.de/forum/supportforen/smarthome-py
+    documentation: https://github.com/michischatz/smarthomeng-smamodbus        # url of documentation (wiki) page
+    support: https://github.com/michischatz/smarthomeng-smamodbus/issues
 
     version: 1.0.0                  # Plugin version (must match the version specified in __init__.py)
     sh_minversion: 1.7              # minimum shNG version to use this plugin
