@@ -2,6 +2,8 @@
 This plugin for SmartHomeNG reads data from the SMA modbus interface.
 It is a multi instance plugin and can be used for on or more inverters.
 
+Deutsche Beschreibung auf [mschatz.net](https://www.mschatz.net/iot/shng/smamodbus)
+
 ## Installation
 Download the latest release and place it in your plugin folder of the SmartHomeNG installation. Restart SmartHomeNG service.
 Follow up the next step.
