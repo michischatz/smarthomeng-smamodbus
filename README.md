@@ -1,15 +1,20 @@
 # SmartHomeng SMA Modbus plugin
-This plugin for SmartHomeNG reads data from the SMA modbus interface.
-It is a multi instance plugin and can be used for on or more inverters.
+This plugin for SmartHomeNG reads data from an [[https://www.sma.de|SMA]] inverter via modbus interface and write the values to an item.
+It is a multi instance plugin and can be used for one or more inverters.
 
-Deutsche Beschreibung auf [mschatz.net](https://www.mschatz.net/iot/shng/smamodbus)
+For example, it could be used for an photovoltaic invertert and also for an battery inverter.
+
+German description / Deutsche Beschreibung auf [mschatz.net](https://www.mschatz.net/smarthome/shng/smamodbus)
 
 ## Installation
 Download the latest release and place it in your plugin folder of the SmartHomeNG installation. Restart SmartHomeNG service.
 Follow up the next step.
 
+**Important:**
+The modbus interface needs to be activated at the inverter. For activation, privileged access is requiered.
+
 ## Requirements
-- pymodbus >= 2.3.0
+- [[https://pymodbus.readthedocs.io/en/latest/readme.html|PyModbus]] >= 2.3.0
 - modbus interface must be enabled on the inverter (privileged access is requiered)
 - modbus unit id on the inverter must be set
 
