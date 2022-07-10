@@ -13,7 +13,7 @@ plugin:
     documentation: https://github.com/michischatz/smarthomeng-smamodbus        # url of documentation (wiki) page
     support: https://github.com/michischatz/smarthomeng-smamodbus/issues
 
-    version: 1.0.0                  # Plugin version (must match the version specified in __init__.py)
+    version: 1.1.0                  # Plugin version (must match the version specified in __init__.py)
     sh_minversion: 1.7              # minimum shNG version to use this plugin
 #    sh_maxversion:                 # maximum shNG version to use this plugin (leave empty if latest)
 #    py_minversion: 3.6             # minimum Python version to use for this plugin
@@ -46,6 +46,14 @@ parameters:
         description:
             de: 'Unit ID des Wechselrichter'
             en: 'Unit ID of the inverter'
+            
+    timeout:
+        tpye: int
+        default: '10'
+        #mandatory: True
+        description:
+            de: 'Timoute von ModbusTcpClient'
+            en: 'Timeout of the ModbusTcpClient'
 
     cycle:
         type: int
@@ -55,6 +63,7 @@ parameters:
             de: 'Zykluszeit (in Sekunden)'
             en: 'Cycle time (in seconds)'
 
+
 item_attributes:
     # Definition of item attributes defined by this plugin (enter 'item_attributes: NONE', if section should be empty)
     smamodbus:
@@ -63,15 +72,15 @@ item_attributes:
             de: 'Gibt die Details der Registeradresse nach Dokumentation SMA an. Bitte folgendes Format verwenden: <Registeradresse SMA>-<Anzahl zusammenhängerder SMA Register>-<Datentyp SMA> Beispiel Status: 30201-2-U32'
             en: 'Specifies a register address.'
 
-item_structs:
+item_structs: NONE
     # Definition of item-structure templates for this plugin (enter 'item_structs: NONE', if section should be empty)
 
 #item_attribute_prefixes:
     # Definition of item attributes that only have a common prefix (enter 'item_attribute_prefixes: NONE' or ommit this section, if section should be empty)
     # NOTE: This section should only be used, if really nessesary (e.g. for the stateengine plugin)
 
-plugin_functions:
+plugin_functions: NONE
     # Definition of plugin functions defined by this plugin (enter 'plugin_functions: NONE', if section should be empty)
 
-logic_parameters:
+logic_parameters: NONE
     # Definition of logic parameters defined by this plugin (enter 'logic_parameters: NONE', if section should be empty)

@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 # vim: set encoding=utf-8 tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 #########################################################################
-#  Copyright 2020      Michael Schatz                         mschatz.net
+#  Copyright 2020-      Michael Schatz               michael at knxler.de
 #########################################################################
 #  This file is part of SmartHomeNG.
 #  https://www.smarthomeNG.de
 #  https://knx-user-forum.de/forum/supportforen/smarthome-py
 #
-#  Sample plugin for new plugins to run with SmartHomeNG version 1.5 and
-#  upwards.
+#  Plugin to read data via Modbus from an SMA Inverter
 #
 #  SmartHomeNG is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -35,7 +34,7 @@ class SMAModbus(SmartPlugin):
     Main class of the Plugin. Does all plugin specific stuff and provides
     the update functions for the items
     """
-    PLUGIN_VERSION = '1.0.0'    # (must match the version specified in plugin.yaml), use '1.0.0' for your initial plugin Release
+    PLUGIN_VERSION = '1.1.0'    # (must match the version specified in plugin.yaml), use '1.0.0' for your initial plugin Release
 
     def __init__(self, sh):
         """
@@ -58,6 +57,7 @@ class SMAModbus(SmartPlugin):
         self._host = self.get_parameter_value('host')
         self._port = self.get_parameter_value('port')
         self._unitid = self.get_parameter_value('unitid')
+        self._timeout = self.get_parameter_value('timeout')
         self._items = []
 
         # cycle time in seconds, only needed, if hardware/interface needs to be
@@ -153,7 +153,7 @@ class SMAModbus(SmartPlugin):
         It is called by the scheduler which is set within run() method.
         """
         self.logger.debug("Poll device plugin-shortname: '{}' on instance '{}'".format(self.get_shortname(),self._instance))
-        inverter = Inverter(self, self._host,self._port,self._unitid,self.logger)        
+        inverter = Inverter(self, self._host,self._port,self._unitid,self._timeout,self.logger)        
         items = Items.get_instance()
         for item in self._items:
             self.logger.debug("Item value: '{}'".format(self.get_iattr_value(item.conf, 'smamodbus')))

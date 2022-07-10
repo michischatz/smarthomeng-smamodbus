@@ -1,6 +1,3 @@
-#########################################################################
-#  Copyright 2020      Michael Schatz                         mschatz.net
-#########################################################################
 import logging
 
 from pymodbus.constants import Endian
@@ -9,9 +6,11 @@ from pymodbus.client.sync import ModbusTcpClient as ModBusClient
 
 class Inverter:
 
-    def __init__(self,sh,ip,port,unitid,logger):
+    def __init__(self,sh,ip,port,unitid,timeout,logger):
         self.logger = logger
         self.unitid = unitid
+        # https://stackoverflow.com/questions/23887184/pymodbus-tcpclient-timeout
+        Endian.Timeout = timeout
         try:
             self._client = ModBusClient(ip, port)
         except:
