@@ -23,6 +23,7 @@ The following parameters are requiered to get plugin running:
 * IP or hostname
 * Port of the modbus interface, default 502
 * Unit id, default 3
+* timeout, default 10
 * cycle, default 60
 * instance name, e.g. battery 
 
