@@ -5,6 +5,7 @@ It is a multi instance plugin and can be used for one or more inverters.
 For example, it could be used for an photovoltaic invertert and also for an battery inverter.
 
 German description / Deutsche Beschreibung auf [schatz.bayern](https://www.schatz.bayern/smarthome/shng/smamodbus)
+
 English description / Englische Beschreibung auf [schatz.bayern](https://www.schatz.bayern/en/smarthome/shng/smamodbus)
 
 ## Installation
